@@ -1,7 +1,9 @@
-import Board from "@/components/board";
+"use client";
+import dynamic from "next/dynamic";
 import raid from "@/lib/raid.json";
+const Board = dynamic(() => import("@/components/board"), { ssr: false });
 
-export default async function RaidBoard() {
+export default function RaidBoard() {
   return (
     <main className="w-full p-8">
       {raid.map((raid, index) => (

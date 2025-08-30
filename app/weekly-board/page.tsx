@@ -1,7 +1,9 @@
-import Board from "@/components/board";
+"use client";
+import dynamic from "next/dynamic";
 import weekly from "@/lib/weekly.json";
+const Board = dynamic(() => import("@/components/board"), { ssr: false });
 
-export default async function WeeklyBoard() {
+export default function WeeklyBoard() {
   return (
     <main className="w-full p-8">
       {weekly.map((week, index) => (
