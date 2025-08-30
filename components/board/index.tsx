@@ -190,6 +190,16 @@ export default function TaskGrid({
                   <CardDescription className="mt-1 text-sm text-white">
                     {task.items.join(", ")}
                   </CardDescription>
+                  {getSubtasksWithState(task).length > 1 && (
+                    <div className="mt-2 text-xs text-yellow-300/70">
+                      {
+                        getSubtasksWithState(task).filter(
+                          (subtask) => subtask.completed
+                        ).length
+                      }
+                      /{getSubtasksWithState(task).length}
+                    </div>
+                  )}
                 </div>
               </CardHeader>
             </Card>
