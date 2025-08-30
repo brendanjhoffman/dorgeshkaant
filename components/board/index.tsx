@@ -43,29 +43,30 @@ export default function TaskGrid({
   data: Task[];
   boardId: string;
 }) {
-  const [boardState, setBoardState] = useState<BoardState>({
-    selectedTaskId: null,
-    subtaskStates: {},
-  });
-
   // Generate storage key based on board ID
   const storageKey = `board_${boardId}_state`;
+  const saved = localStorage.getItem(storageKey);
+  const parsedState = JSON.parse(saved || "{}") as BoardState;
+  const [boardState, setBoardState] = useState<BoardState>({
+    selectedTaskId: parsedState.selectedTaskId || null,
+    subtaskStates: parsedState.subtaskStates || {},
+  });
 
-  // Load state from localStorage on component mount
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem(storageKey);
-      if (saved) {
-        const parsedState = JSON.parse(saved);
-        setBoardState({
-          selectedTaskId: parsedState.selectedTaskId || null,
-          subtaskStates: parsedState.subtaskStates || {},
-        });
-      }
-    } catch (error) {
-      console.error("Error loading board state from localStorage:", error);
-    }
-  }, [storageKey]);
+  // // Load state from localStorage on component mount
+  // useEffect(() => {
+  //   try {
+  //     const saved = localStorage.getItem(storageKey);
+  //     if (saved) {
+  //       const parsedState = JSON.parse(saved);
+  //       setBoardState({
+  //         selectedTaskId: parsedState.selectedTaskId || null,
+  //         subtaskStates: parsedState.subtaskStates || {},
+  //       });
+  //     }
+  //   } catch (error) {
+  //     console.error("Error loading board state from localStorage:", error);
+  //   }
+  // }, [storageKey]);
 
   // Save state to localStorage whenever it changes
   useEffect(() => {
