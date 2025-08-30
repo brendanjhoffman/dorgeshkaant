@@ -18,6 +18,7 @@ export function AppSidebar() {
   const exportBoardState = useCallback(() => {
     try {
       // Get all board states from localStorage
+      // @ts-ignore
       const boardStates: Record<string, any> = {};
       for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
