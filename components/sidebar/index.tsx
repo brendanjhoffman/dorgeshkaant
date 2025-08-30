@@ -14,24 +14,33 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback } from "react";
 
+interface BoardState {
+  selectedTaskId: number | null;
+  subtaskStates: Record<number, Record<string, boolean>>;
+}
+
+interface ExportData {
+  timestamp: string;
+  boardStates: Record<string, BoardState>;
+}
+
 export function AppSidebar() {
   const exportBoardState = useCallback(() => {
     try {
       // Get all board states from localStorage
-      // @ts-ignore
-      const boardStates: Record<string, any> = {};
+      const boardStates: Record<string, BoardState> = {};
       for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
         if (key && key.startsWith("board_") && key.endsWith("_state")) {
           const value = localStorage.getItem(key);
           if (value) {
-            boardStates[key] = JSON.parse(value);
+            boardStates[key] = JSON.parse(value) as BoardState;
           }
         }
       }
 
       // Create export data with timestamp
-      const exportData = {
+      const exportData: ExportData = {
         timestamp: new Date().toISOString(),
         boardStates,
       };
@@ -69,7 +78,7 @@ export function AppSidebar() {
         reader.onload = (e) => {
           try {
             const content = e.target?.result as string;
-            const importData = JSON.parse(content);
+            const importData = JSON.parse(content) as ExportData;
 
             if (
               !importData.boardStates ||
