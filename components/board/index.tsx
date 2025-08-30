@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import {
   Card,
   CardDescription,
@@ -24,45 +24,92 @@ interface Task {
   description: string;
 }
 
-export default function TaskGrid({ data }: { data: Task[] }) {
-  const [completedTasks, setCompletedTasks] = useState<Set<number>>(new Set());
-  const [selectedTask, setSelectedTask] = useState<Task | null>(null);
+interface BoardState {
+  completedTasks: Set<number>;
+  selectedTaskId: number | null;
+}
 
+export default function TaskGrid({
+  data,
+  boardId,
+}: {
+  data: Task[];
+  boardId: string;
+}) {
+  const [boardState, setBoardState] = useState<BoardState>({
+    completedTasks: new Set(),
+    selectedTaskId: null,
+  });
+
+  // Generate storage key based on board ID
+  const storageKey = `board_${boardId}_state`;
+
+  // Load state from localStorage on component mount
   useEffect(() => {
-    const saved = localStorage.getItem("completedTasks");
-    if (saved) {
-      setCompletedTasks(new Set(JSON.parse(saved)));
+    try {
+      const saved = localStorage.getItem(storageKey);
+      if (saved) {
+        const parsedState = JSON.parse(saved);
+        setBoardState({
+          completedTasks: new Set(parsedState.completedTasks || []),
+          selectedTaskId: parsedState.selectedTaskId || null,
+        });
+      }
+    } catch (error) {
+      console.error("Error loading board state from localStorage:", error);
     }
+  }, [storageKey]);
+
+  // Save state to localStorage whenever it changes
+  useEffect(() => {
+    try {
+      const stateToSave = {
+        completedTasks: Array.from(boardState.completedTasks),
+        selectedTaskId: boardState.selectedTaskId,
+      };
+      localStorage.setItem(storageKey, JSON.stringify(stateToSave));
+    } catch (error) {
+      console.error("Error saving board state to localStorage:", error);
+    }
+  }, [boardState, storageKey]);
+
+  const toggleTaskCompletion = useCallback((taskId: number) => {
+    setBoardState((prev) => {
+      const newCompletedTasks = new Set(prev.completedTasks);
+      if (newCompletedTasks.has(taskId)) {
+        newCompletedTasks.delete(taskId);
+      } else {
+        newCompletedTasks.add(taskId);
+      }
+      return {
+        ...prev,
+        completedTasks: newCompletedTasks,
+      };
+    });
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem(
-      "completedTasks",
-      JSON.stringify(Array.from(completedTasks))
-    );
-  }, [completedTasks]);
+  const openTaskDialog = useCallback((task: Task) => {
+    setBoardState((prev) => ({
+      ...prev,
+      selectedTaskId: task.id,
+    }));
+  }, []);
 
-  const toggleTaskCompletion = (taskId: number) => {
-    setCompletedTasks((prev) => {
-      const newSet = new Set(prev);
-      if (newSet.has(taskId)) {
-        newSet.delete(taskId);
-      } else {
-        newSet.add(taskId);
-      }
-      return newSet;
-    });
-  };
+  const closeTaskDialog = useCallback(() => {
+    setBoardState((prev) => ({
+      ...prev,
+      selectedTaskId: null,
+    }));
+  }, []);
 
-  const openTaskDialog = (task: Task) => {
-    setSelectedTask(task);
-  };
+  const selectedTask =
+    data.find((task) => task.id === boardState.selectedTaskId) || null;
 
   return (
     <div>
       <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
         {data.map((task) => {
-          const isCompleted = completedTasks.has(task.id);
+          const isCompleted = boardState.completedTasks.has(task.id);
 
           return (
             <Card
@@ -110,12 +157,13 @@ export default function TaskGrid({ data }: { data: Task[] }) {
 
       <div className="mt-8 text-center">
         <p className="text-sm text-yellow-300">
-          {completedTasks.size} of {data.length} tiles completed
+          {boardState.completedTasks.size} of {data.length} tiles completed
         </p>
       </div>
+
       <Dialog
         open={!!selectedTask}
-        onOpenChange={(open: boolean) => !open && setSelectedTask(null)}
+        onOpenChange={(open: boolean) => !open && closeTaskDialog()}
       >
         <DialogContent className="max-w-2xl bg-zinc-900 border-yellow-300 border-2">
           {selectedTask && (

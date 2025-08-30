@@ -37,6 +37,10 @@ export function AppSidebar() {
             <SidebarMenuItem>
               <Link href="/weekly-board">Weekly Board</Link>
             </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroup>
+        <SidebarGroup className="bg-black">
+          <SidebarMenu>
             <SidebarMenuItem>
               <Link href="/teams">Teams</Link>
             </SidebarMenuItem>
