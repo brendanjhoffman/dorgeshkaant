@@ -3,7 +3,7 @@
     "id": 1,
     "title": "IT BURNS LIKE A",
     "items": "Infernal Cape",
-    "description": "Have a member of your team acquire their Infernal Cape for the first time. Anybody who has killed Zuk before on ANY account is illeligible."
+    "description": "Have a member of your team acquire their Infernal Cape for the first time. Anybody who has killed Zuk before on ANY account is ineligible."
   },
   {
     "id": 2,
@@ -15,6 +15,6 @@
     "id": 3,
     "title": "...OR GIVE ME DEATH",
     "items": "Dizana's Quiver",
-    "description": "Have a member of your team acquire their Dizana's Quiver for the first time. Anybody who was killed Sol before on ANY account is illeligible."
+    "description": "Have a member of your team acquire their Dizana's Quiver for the first time. Anybody who was killed Sol before on ANY account is ineligible."
   }
 ]

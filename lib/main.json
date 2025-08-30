@@ -44,8 +44,8 @@
   {
     "id": 8,
     "title": "MICHAEL MYERS",
-    "items": "Greenman Mask, Fletching Knife",
-    "description": "Have a member of your team acquire the Greenman Mask and the Fletching Knife from the Vale Totems Minigame. Can be acquired by different team members."
+    "items": "Greenman Mask and Fletching Knife",
+    "description": "Acquire the Greenman Mask and the Fletching Knife from the Vale Totems Minigame. Can be acquired by different team members."
   },
   {
     "id": 9,
@@ -62,92 +62,92 @@
   {
     "id": 11,
     "title": "JIM CARREY",
-    "items": "Mask of Ranul, Ogre Shaman Mask, Black Mask",
-    "description": "Have a member of your team acquire the Mask of Ranul, Ogre Shaman Mask, and Black Mask as a team. Can be acquired by different team members."
+    "items": "Mask of Ranul, Ogre Shaman Mask, and Black Mask",
+    "description": "Acquire the Mask of Ranul, Ogre Shaman Mask, and Black Mask as a team. Can be acquired by different team members."
   },
   {
     "id": 12,
     "title": "VI THE LOVERS",
-    "items": "Fedora, Steel Ring",
-    "description": "Have a member of your team acquire the Fedora and Steel Ring from their various archelogists. Can be acquired by different team members."
+    "items": "Fedora and Steel Ring",
+    "description": "Acquire the Fedora and Steel Ring from their various archelogists. Can be acquired by different team members."
   },
   {
     "id": 13,
     "title": "DRIP CHECK",
     "items": "Elder Chaos Druid Outfit",
-    "description": "Have a member of your team acquire all three pieces of the Elder Chaos Druid outfit. Can be acquired by different team members."
+    "description": "All three pieces of the Elder Chaos Druid outfit. Can be acquired by different team members."
   },
   {
     "id": 14,
     "title": "IBIZA READY",
     "items": "Bryo's Essence, Obor's Club",
-    "description": "Have a member of your team acquire Bryo's Essence and Obor's Club as a team. Can be acquired by different members."
+    "description": "Acquire Bryo's Essence and Obor's Club as a team. Can be acquired by different members."
   },
   {
     "id": 15,
     "title": "BOOK WYRM",
-    "items": "Fire, Water, Earth tomes",
-    "description": "Have a member of your team acquire all 3 tomes (Fire, Water, Earth) from their respective drop locations (Wintertodt, Tempoross, Hueycoatl). Can be acquired by different team members."
+    "items": "Fire, Water, all Earth tomes",
+    "description": "Acquire all 3 tomes (Fire, Water, Earth) from their respective drop locations (Wintertodt, Tempoross, Hueycoatl). Can be acquired by different team members."
   },
   {
     "id": 16,
     "title": "MAN I LOVE FISH",
-    "items": "Bass, Shark, Swordfish, Harpoonfish",
-    "description": "Have a member of your team acquire all 4 big fish as a team (Bass, Shark, Swordfish, Harpoonfish). Can be acquired by different team members."
+    "items": "Bass, Shark, Swordfish, and Harpoonfish",
+    "description": "Acquire all 4 big fish as a team (Bass, Shark, Swordfish, Harpoonfish). Can be acquired by different team members."
   },
   {
     "id": 17,
     "title": "DRAGON HUNTER",
-    "items": "Vorkath's Head, KBD's Heads, Dragon Hunter Wand",
-    "description": "Have a member of your team acquire Vorkath's Head, KBD's Heads, and the Dragon Hunter Wand from Hueycoatl. Can be acquired by different members."
+    "items": "Vorkath's Head, KBD's Heads, and Dragon Hunter Wand",
+    "description": "Acquire Vorkath's Head, KBD's Heads, and the Dragon Hunter Wand from Hueycoatl. Can be acquired by different members."
   },
   {
     "id": 18,
     "title": "SHOE STORE!",
-    "items": "Rangers, Manacles, Wizard Boots, Holy Sandals",
-    "description": "Have a member of your team acquire all 4 Medium Clue boots (Rangers, Manacles, Wizard Boots, Holy Sandals). Can be acquired by different team members."
+    "items": "Rangers, Manacles, Wizard Boots, and Holy Sandals",
+    "description": "Acquire all 4 Medium Clue boots (Rangers, Manacles, Wizard Boots, Holy Sandals). Can be acquired by different team members."
   },
   {
     "id": 19,
     "title": "OH BROTHER!",
     "items": "Barrows set",
-    "description": "Have a member of your team acquire a complete Barrows set as a team. Pieces can be acquired by different members."
+    "description": "Acquire a complete Barrows set as a team. Pieces can be acquired by different members."
   },
   {
     "id": 20,
     "title": "LORD OF THE RINGS",
-    "items": "Beserkers, Warriors, Archers, Seers",
-    "description": "Have a member of your team acquire every single ring (Beserkers, Warriors, Archers, Seers) from the Daggonath Kings. Can be acquired by different team members."
+    "items": "Beserkers, Warriors, Archers, and Seers Rings",
+    "description": "Acquire every single ring (Beserkers, Warriors, Archers, Seers) from the Daggonath Kings. Can be acquired by different team members."
   },
   {
     "id": 21,
     "title": "WOMBO COMBO",
     "items": "Serp, Magic Fang, Tanz Fang, Onyx",
-    "description": "Have a member of your team acquire every one of the big 4 Zulrah uniques (Serp, Magic Fang, Tanz Fang, Onyx). Can be acquired by different team members."
+    "description": "Acquire every one of the big 4 Zulrah uniques (Serp, Magic Fang, Tanz Fang, Onyx). Can be acquired by different team members."
   },
   {
     "id": 22,
     "title": "INSIDE OF YOU ARE TWO WARDS",
-    "items": "Odium or Malediction Shard",
-    "description": "Have a member of your team acquire all three individual pieces of a wildy Ward (Odium or Malediction). Shards can be acquired by different team members."
+    "items": "Odium or Malediction Ward",
+    "description": "Acquire all three individual pieces of a wildy Ward (Odium or Malediction). Shards can be acquired by different team members."
   },
   {
     "id": 23,
     "title": "LEARNER'S LUCK",
-    "items": "Purple Scroll",
-    "description": "Have a member of your team acquire the lowest invocation level of a purple scroll during bingo. If multiple teams both have the same lowest level invocation level of a purple scroll, they each get the tile completion."
+    "items": "ToA Purple",
+    "description": "Have a member of your team acquire the lowest invocation level purple during bingo. If multiple teams both have the same lowest level invocation, they each get the tile completion."
   },
   {
     "id": 24,
     "title": "SEED WHAT YOU DID THERE",
     "items": "Crystal Weapon Seed",
-    "description": "Have a member of your team acquire three (3) regular Crystal Weapon Seeds from either of The Gauntlets. Drops can be acquired by different members."
+    "description": "Acquire three (3) regular Crystal Weapon Seeds from either of The Gauntlets. Drops can be acquired by different members."
   },
   {
     "id": 25,
     "title": "THE NEW META",
     "items": "Tormented Synapse, Burning Claw",
-    "description": "Have a member of your team acquire both a Tormented Synapse and a Burning Claw from Tormented Demons. Drops can be acquired by different members."
+    "description": "Acquire both a Tormented Synapse and a Burning Claw from Tormented Demons. Drops can be acquired by different members."
   },
   {
     "id": 26,
@@ -164,8 +164,8 @@
   {
     "id": 28,
     "title": "ANY PET",
-    "items": "Any Pet (no fast ones)",
-    "description": "Have a member of your team acquire any of the following items: Chompy Chick, Cats/Kittens, Borav, Pet Rock, Egg. No pulling fast ones."
+    "items": "Any Pet*",
+    "description": "Have a member of your team acquire any pet except the following: Chompy Chick, Cats/Kittens, Borav, Pet Rock, Egg."
   },
   {
     "id": 29,
@@ -176,26 +176,26 @@
   {
     "id": 30,
     "title": "GUARANTEED DAMAGE",
-    "items": "Voidwaker (Blade, Gem, Hilt)",
-    "description": "Have a member of your team acquire all 3 pieces of the Voidwaker (Blade, Gem, Hilt). Pieces can be acquired by different team members."
+    "items": "Voidwaker",
+    "description": "Acquire all 3 pieces of the Voidwaker (Blade, Gem, Hilt). Pieces can be acquired by different team members."
   },
   {
     "id": 32,
     "title": "NEXCLUDED",
-    "items": "Any unique drop from the God Wars Dungeon (minus Nex)",
-    "description": "Have a member of your team acquire a unique drop from the God Wars Dungeon (minus Nex). Godsword Shards DO NOT count. Items can be acquired by different team members."
+    "items": "Unique drop from all 4 God Wars Dungeon (minus Nex)",
+    "description": "Acquire a unique drop from the God Wars Dungeon (minus Nex). Godsword Shards DO NOT count. Items can be acquired by different team members."
   },
   {
     "id": 33,
     "title": "INGOT TO BE KIDDING ME",
     "items": "Chromium Ingots",
-    "description": "Have a member of your team acquire three (3) Chromium Ingots from any of the Desert Treasure 2 bosses (Duke, Vard, Whisp, Levi). Drops can be acquired by different members."
+    "description": "Acquire three (3) Chromium Ingots from any of the Desert Treasure 2 bosses (Duke, Vard, Whisp, Levi). Drops can be acquired by different members."
   },
   {
     "id": 34,
     "title": "BETTER CALL SAUL!",
     "items": "Purifying Sigil Contracts",
-    "description": "Have a member of your team acquire each of the 5 Purifying Sigil Contracts from Yama. Contracts can be pulled by different members of your team."
+    "description": "Acquire each of the 5 Purifying Sigil Contracts from Yama. Contracts can be pulled by different members of your team."
   },
   {
     "id": 35,
@@ -206,7 +206,7 @@
   {
     "id": 36,
     "title": "I SHOULD REALLY CALL THEM",
-    "items": "Doom of Mohkaiotl",
-    "description": "Have a member of your team acquire a unique drop from the Doom of Mohkaiotl."
+    "items": "Doom of Mokhaiotl",
+    "description": "Have a member of your team acquire a unique drop from the Doom of Mokhaiotl."
   }
 ]
