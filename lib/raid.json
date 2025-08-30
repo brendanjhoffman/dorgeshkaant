@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "CoX Megarare",
+    "items": "Twisted Bow, Kodai Insignia, or Elder Maul",
+    "description": "Have a member of your team acquire a Twisted Bow, Kodai Insignia, or Elder Maul."
+  },
+  {
+    "id": 2,
+    "title": "Ancestral",
+    "items": "Any Ancestral Piece",
+    "description": "Have a member of your team acquire any Ancestral Piece."
+  },
+  {
+    "id": 3,
+    "title": "Dinhs/Claws",
+    "items": "Dinh's Bulwark, Dragon Claws",
+    "description": "Have a member of your team acquire a Dinh's Bulwark or Dragon Claws."
+  },
+  {
+    "id": 4,
+    "title": "DHCB/Buckler",
+    "items": "Dragon Hunter Crossbow, Twisted Buckler",
+    "description": "Have a member of your team acquire a Dragon Hunter Crossbow or Twisted Buckler."
+  },
+  {
+    "id": 5,
+    "title": "Scrolls",
+    "items": "Arcane or Dexterous Prayer Scroll",
+    "description": "Have a member of your team acquire a Arcane or Dexterous Prayer Scroll."
+  },
+  {
+    "id": 6,
+    "title": "Tumeken's Shadow",
+    "items": "Tumeken's Shadow",
+    "description": "Have a member of your team acquire a Tumeken's Shadow."
+  },
+  {
+    "id": 7,
+    "title": "Masori",
+    "items": "Any Masori Piece",
+    "description": "Have a member of your team acquire any Masori Piece."
+  },
+  {
+    "id": 8,
+    "title": "Ward",
+    "items": "Elidinis Ward",
+    "description": "Have a member of your team acquire an Elidinis Ward."
+  },
+  {
+    "id": 9,
+    "title": "Fang/LB",
+    "items": "Osmumten's Fang, Lightbearer",
+    "description": "Have a member of your team acquire Osmumten's Fang or Lightbearer."
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "PISS",
+    "color": "yellow",
+    "image": "/images/teams/pancakejug.png",
+    "members": [
+      "bugsplat",
+      "butch bait",
+      "darkirngiant",
+      "denniscape",
+      "degradee",
+      "iron castle2",
+      "kiitama",
+      "poc yotg",
+      "poseidondude",
+      "swinga2h"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Pink MopShop",
+    "color": "pink",
+    "image": "/images/teams/mopshop.png",
+    "members": [
+      "axolototito",
+      "azoth jw",
+      "casticfe",
+      "claude bussy",
+      "kvltgirl666",
+      "limisfortune",
+      "mikey0wikey",
+      "mr fr33ze",
+      "pope muscles",
+      "ultebor"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Gnomeballers",
+    "color": "blue",
+    "image": "/images/teams/gnomeballers.png",
+    "members": [
+      "berrry",
+      "brendanh117",
+      "crab riot",
+      "listentonano",
+      "lostjondle",
+      "matolch",
+      "nebji",
+      "norpthalomus",
+      "serriss",
+      "tinterwodt"
+    ]
+  }
+]

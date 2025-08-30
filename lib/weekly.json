@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "DRAW DYZ",
+    "items": "Dyz",
+    "description": "Have a member of your team draw Dyz (our mascot) to the best of their ability!"
+  },
+  {
+    "id": 2,
+    "title": "PK A MEMBER OF DORG",
+    "items": "Member of the clan",
+    "description": "Have a member of your team PK another member of the clan (must not be on your bingo team; players guesting on other bingo teams DO count)!"
+  },
+  {
+    "id": 3,
+    "title": "YES CHEF",
+    "items": "Golden Chefs Hat",
+    "description": "Have a member of your team acquire a Golden Chefs Hat from an easy clue!"
+  },
+  {
+    "id": 4,
+    "title": "COOL ANIMAL!",
+    "items": "Cool Animal",
+    "description": "Take a pic of the coolest animal you see and draw a classic OSRS hat on it!"
+  },
+  {
+    "id": 5,
+    "title": "MINE 10K OF SOMETHING",
+    "items": "10k of something",
+    "description": "Mine 10k of whatever (and potentially crash the GE with it)"
+  },
+  {
+    "id": 6,
+    "title": "PRESENT US WITH THE CRYSTAL GRAIL",
+    "items": "Crystal Grail",
+    "description": "Slay the beast and present us with the Crystal Grail!"
+  }
+]
