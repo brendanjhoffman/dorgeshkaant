@@ -2,211 +2,230 @@
   {
     "id": 1,
     "title": "SPIDER CUDDLE",
-    "items": "Saranchis Cudgel",
+    "items": ["Saranchis Cudgel"],
     "description": "Have a member of your team acquire the Saranchis Cudgel from Saranchis."
   },
   {
     "id": 2,
     "title": "PAY YOUR TITHE",
-    "items": "Gricollers Can",
+    "items": ["Gricollers Can"],
     "description": "Have a member of your team acquire Gricollers Can from Tithe Farm."
   },
   {
     "id": 3,
     "title": "CAKED UP",
-    "items": "Gnome Goggles, Mint Cake",
+    "items": ["Gnome Goggles", "Mint Cake"],
     "description": "Have a member of your team acquire the Gnome Goggles and Mint Cake from the Gnome Restaurant Minigame."
   },
   {
     "id": 4,
     "title": "ARRRGILITY",
-    "items": "Pirate's Hook",
+    "items": ["Pirate's Hook"],
     "description": "Have a member of your team acquire the Pirate's Hook from the Brimhaven Agility Arena."
   },
   {
     "id": 5,
     "title": "GET 'EM, CHAMP!",
-    "items": "Any Champion Scroll",
+    "items": ["Any Champion Scroll"],
     "description": "Have a member of your team acquire any Champion's Scroll."
   },
   {
     "id": 6,
     "title": "NICE D(P)ICK",
-    "items": "Dragon Pickaxe",
+    "items": ["Dragon Pickaxe"],
     "description": "Have a member of your team acquire the Dragon Pickaxe from any non-GE source."
   },
   {
     "id": 7,
     "title": "TILE H117",
-    "items": "Abyssal Blue Dye",
+    "items": ["Abyssal Blue Dye"],
     "description": "Have a member of your team acquire the Abyssal Blue Dye from GOTR (can be exchanged from another dye you acquired during Bingo)."
   },
   {
     "id": 8,
     "title": "MICHAEL MYERS",
-    "items": "Greenman Mask and Fletching Knife",
+    "items": ["Greenman Mask", "Fletching Knife"],
     "description": "Acquire the Greenman Mask and the Fletching Knife from the Vale Totems Minigame. Can be acquired by different team members."
   },
   {
     "id": 9,
     "title": "IS THIS FLY FISHING?",
-    "items": "Golden Tench",
+    "items": ["Golden Tench"],
     "description": "Have a member of your team acquire the Golden Tench from the Aerial Fishing Minigame."
   },
   {
     "id": 10,
     "title": "GOTTA GO FAST",
-    "items": "Ring of Endurance",
+    "items": ["Ring of Endurance"],
     "description": "Have a member of your team acquire the Ring of Endurance from Hallowed Sepulcher."
   },
   {
     "id": 11,
     "title": "JIM CARREY",
-    "items": "Mask of Ranul, Ogre Shaman Mask, and Black Mask",
+    "items": ["Mask of Ranul", "Ogre Shaman Mask", "Black Mask"],
     "description": "Acquire the Mask of Ranul, Ogre Shaman Mask, and Black Mask as a team. Can be acquired by different team members."
   },
   {
     "id": 12,
     "title": "VI THE LOVERS",
-    "items": "Fedora and Steel Ring",
+    "items": ["Fedora", "Steel Ring"],
     "description": "Acquire the Fedora and Steel Ring from their various archelogists. Can be acquired by different team members."
   },
   {
     "id": 13,
     "title": "DRIP CHECK",
-    "items": "Elder Chaos Druid Outfit",
+    "items": [
+      "Elder Chaos Druid Top",
+      "Elder Chaos Druid Bottoms",
+      "Elder Chaos Druid Hood"
+    ],
     "description": "All three pieces of the Elder Chaos Druid outfit. Can be acquired by different team members."
   },
   {
     "id": 14,
     "title": "IBIZA READY",
-    "items": "Bryo's Essence, Obor's Club",
+    "items": ["Bryo's Essence", "Obor's Club"],
     "description": "Acquire Bryo's Essence and Obor's Club as a team. Can be acquired by different members."
   },
   {
     "id": 15,
     "title": "BOOK WYRM",
-    "items": "Fire, Water, all Earth tomes",
+    "items": ["Tome of Fire", "Tome of Water", "Tome of Earth"],
     "description": "Acquire all 3 tomes (Fire, Water, Earth) from their respective drop locations (Wintertodt, Tempoross, Hueycoatl). Can be acquired by different team members."
   },
   {
     "id": 16,
     "title": "MAN I LOVE FISH",
-    "items": "Bass, Shark, Swordfish, and Harpoonfish",
+    "items": ["Big Bass", "Big Shark", "Big Swordfish", "Big Harpoonfish"],
     "description": "Acquire all 4 big fish as a team (Bass, Shark, Swordfish, Harpoonfish). Can be acquired by different team members."
   },
   {
     "id": 17,
     "title": "DRAGON HUNTER",
-    "items": "Vorkath's Head, KBD's Heads, and Dragon Hunter Wand",
+    "items": ["Vorkath's Head", "KBD's Heads", "Dragon Hunter Wand"],
     "description": "Acquire Vorkath's Head, KBD's Heads, and the Dragon Hunter Wand from Hueycoatl. Can be acquired by different members."
   },
   {
     "id": 18,
     "title": "SHOE STORE!",
-    "items": "Rangers, Manacles, Wizard Boots, and Holy Sandals",
+    "items": ["Rangers", "Manacles", "Wizard Boots", "Holy Sandals"],
     "description": "Acquire all 4 Medium Clue boots (Rangers, Manacles, Wizard Boots, Holy Sandals). Can be acquired by different team members."
   },
   {
     "id": 19,
     "title": "OH BROTHER!",
-    "items": "Barrows set",
+    "items": [
+      "Barrows helmet",
+      "Barrows chest",
+      "Barrows legs",
+      "Barrows weapon"
+    ],
     "description": "Acquire a complete Barrows set as a team. Pieces can be acquired by different members."
   },
   {
     "id": 20,
     "title": "LORD OF THE RINGS",
-    "items": "Beserkers, Warriors, Archers, and Seers Rings",
+    "items": ["Beserker Ring", "Warrior Ring", "Archers Ring", "Seers Ring"],
     "description": "Acquire every single ring (Beserkers, Warriors, Archers, Seers) from the Daggonath Kings. Can be acquired by different team members."
   },
   {
     "id": 21,
     "title": "WOMBO COMBO",
-    "items": "Serp, Magic Fang, Tanz Fang, Onyx",
+    "items": ["Serpentine Visage", "Magic Fang", "Tanzanite Fang", "Onyx"],
     "description": "Acquire every one of the big 4 Zulrah uniques (Serp, Magic Fang, Tanz Fang, Onyx). Can be acquired by different team members."
   },
   {
     "id": 22,
     "title": "INSIDE OF YOU ARE TWO WARDS",
-    "items": "Odium or Malediction Ward",
+    "items": ["Shard 1", "Shard 2", "Shard 3"],
     "description": "Acquire all three individual pieces of a wildy Ward (Odium or Malediction). Shards can be acquired by different team members."
   },
   {
     "id": 23,
     "title": "LEARNER'S LUCK",
-    "items": "ToA Purple",
+    "items": ["ToA Purple"],
     "description": "Have a member of your team acquire the lowest invocation level purple during bingo. If multiple teams both have the same lowest level invocation, they each get the tile completion."
   },
   {
     "id": 24,
     "title": "SEED WHAT YOU DID THERE",
-    "items": "Crystal Weapon Seed",
+    "items": [
+      "Crystal Weapon Seed #1",
+      "Crystal Weapon Seed #2",
+      "Crystal Weapon Seed #3"
+    ],
     "description": "Acquire three (3) regular Crystal Weapon Seeds from either of The Gauntlets. Drops can be acquired by different members."
   },
   {
     "id": 25,
     "title": "THE NEW META",
-    "items": "Tormented Synapse, Burning Claw",
+    "items": ["Tormented Synapse", "Burning Claw"],
     "description": "Acquire both a Tormented Synapse and a Burning Claw from Tormented Demons. Drops can be acquired by different members."
   },
   {
     "id": 26,
     "title": "THE BEAST IN ME",
-    "items": "Any unique drop from the Corporeal Beast",
+    "items": ["Any unique drop from the Corporeal Beast"],
     "description": "Have a member of your team acquire any unique drop from the Corporeal Beast."
   },
   {
     "id": 27,
     "title": "GENGAR DID YOU..?!",
-    "items": "Any unique drop from either of The Nightmares",
+    "items": ["Any unique drop from either of The Nightmares"],
     "description": "Have a member of your team acquire any unique drop from either of The Nightmares."
   },
   {
     "id": 28,
     "title": "ANY PET",
-    "items": "Any Pet*",
+    "items": ["Any Pet*"],
     "description": "Have a member of your team acquire any pet except the following: Chompy Chick, Cats/Kittens, Borav, Pet Rock, Egg."
   },
   {
     "id": 29,
     "title": "GIVE ME GLORY...",
-    "items": "Any unique drop from the Fortis Colosseum",
+    "items": ["Any unique drop from the Fortis Colosseum"],
     "description": "Have a member of your team acquire any unique drop from the Fortis Colosseum."
   },
   {
     "id": 30,
     "title": "GUARANTEED DAMAGE",
-    "items": "Voidwaker",
+    "items": ["Voidwaker Blade", "Voidwaker Gem", "Voidwaker Hilt"],
     "description": "Acquire all 3 pieces of the Voidwaker (Blade, Gem, Hilt). Pieces can be acquired by different team members."
   },
   {
     "id": 32,
     "title": "NEXCLUDED",
-    "items": "Unique drop from all 4 God Wars Dungeon (minus Nex)",
+    "items": ["Bandos", "Saradomin", "Armadyl", "Zamorak"],
     "description": "Acquire a unique drop from the God Wars Dungeon (minus Nex). Godsword Shards DO NOT count. Items can be acquired by different team members."
   },
   {
     "id": 33,
     "title": "INGOT TO BE KIDDING ME",
-    "items": "Chromium Ingots",
+    "items": ["Chromium Ingot #1", "Chromium Ingot #2", "Chromium Ingot #3"],
     "description": "Acquire three (3) Chromium Ingots from any of the Desert Treasure 2 bosses (Duke, Vard, Whisp, Levi). Drops can be acquired by different members."
   },
   {
     "id": 34,
     "title": "BETTER CALL SAUL!",
-    "items": "Purifying Sigil Contracts",
+    "items": [
+      "Purifying Sigil Contract #1",
+      "Purifying Sigil Contract #2",
+      "Purifying Sigil Contract #3",
+      "Purifying Sigil Contract #4",
+      "Purifying Sigil Contract #5"
+    ],
     "description": "Acquire each of the 5 Purifying Sigil Contracts from Yama. Contracts can be pulled by different members of your team."
   },
   {
     "id": 35,
     "title": "PLEAE",
-    "items": "Clue Megarare unique",
+    "items": ["Clue Megarare unique"],
     "description": "Have a member of your team acquire any clue Megarare unique (Hard Clues and above)."
   },
   {
     "id": 36,
     "title": "I SHOULD REALLY CALL THEM",
-    "items": "Doom of Mokhaiotl",
+    "items": ["Doom of Mokhaiotl Unique"],
     "description": "Have a member of your team acquire a unique drop from the Doom of Mokhaiotl."
   }
 ]

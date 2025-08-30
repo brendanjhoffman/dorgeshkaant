@@ -17,16 +17,23 @@ import {
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 
+interface Subtask {
+  id: string;
+  text: string;
+  completed: boolean;
+}
+
 interface Task {
   id: number;
   title: string;
-  items: string;
+  items: string[];
   description: string;
+  subtasks?: Subtask[];
 }
 
 interface BoardState {
-  completedTasks: Set<number>;
   selectedTaskId: number | null;
+  subtaskStates: Record<number, Record<string, boolean>>;
 }
 
 export default function TaskGrid({
@@ -37,8 +44,8 @@ export default function TaskGrid({
   boardId: string;
 }) {
   const [boardState, setBoardState] = useState<BoardState>({
-    completedTasks: new Set(),
     selectedTaskId: null,
+    subtaskStates: {},
   });
 
   // Generate storage key based on board ID
@@ -51,8 +58,8 @@ export default function TaskGrid({
       if (saved) {
         const parsedState = JSON.parse(saved);
         setBoardState({
-          completedTasks: new Set(parsedState.completedTasks || []),
           selectedTaskId: parsedState.selectedTaskId || null,
+          subtaskStates: parsedState.subtaskStates || {},
         });
       }
     } catch (error) {
@@ -64,8 +71,8 @@ export default function TaskGrid({
   useEffect(() => {
     try {
       const stateToSave = {
-        completedTasks: Array.from(boardState.completedTasks),
         selectedTaskId: boardState.selectedTaskId,
+        subtaskStates: boardState.subtaskStates,
       };
       localStorage.setItem(storageKey, JSON.stringify(stateToSave));
     } catch (error) {
@@ -73,20 +80,66 @@ export default function TaskGrid({
     }
   }, [boardState, storageKey]);
 
-  const toggleTaskCompletion = useCallback((taskId: number) => {
-    setBoardState((prev) => {
-      const newCompletedTasks = new Set(prev.completedTasks);
-      if (newCompletedTasks.has(taskId)) {
-        newCompletedTasks.delete(taskId);
-      } else {
-        newCompletedTasks.add(taskId);
-      }
-      return {
-        ...prev,
-        completedTasks: newCompletedTasks,
-      };
-    });
+  // Convert items string to subtasks array
+  const getSubtasks = useCallback((task: Task): Subtask[] => {
+    if (task.subtasks) {
+      return task.subtasks;
+    }
+
+    // If no subtasks defined, create one from the items field
+    const items = task.items.map((item) => item.trim()).filter(Boolean);
+    return items.map((item, index) => ({
+      id: `${task.id}-${index}`,
+      text: item,
+      completed: false,
+    }));
   }, []);
+
+  // Get subtasks for a specific task with their completion state
+  const getSubtasksWithState = useCallback(
+    (task: Task): Subtask[] => {
+      const subtasks = getSubtasks(task);
+      const taskSubtaskStates = boardState.subtaskStates[task.id] || {};
+
+      return subtasks.map((subtask) => ({
+        ...subtask,
+        completed: taskSubtaskStates[subtask.id] || false,
+      }));
+    },
+    [getSubtasks, boardState.subtaskStates]
+  );
+
+  // Check if a task is completed based on its subtasks
+  const isTaskCompleted = useCallback(
+    (task: Task): boolean => {
+      const subtasks = getSubtasksWithState(task);
+      return (
+        subtasks.length > 0 && subtasks.every((subtask) => subtask.completed)
+      );
+    },
+    [getSubtasksWithState]
+  );
+
+  const toggleSubtaskCompletion = useCallback(
+    (taskId: number, subtaskId: string) => {
+      setBoardState((prev) => {
+        const currentTaskStates = prev.subtaskStates[taskId] || {};
+        const newTaskStates = {
+          ...currentTaskStates,
+          [subtaskId]: !currentTaskStates[subtaskId],
+        };
+
+        return {
+          ...prev,
+          subtaskStates: {
+            ...prev.subtaskStates,
+            [taskId]: newTaskStates,
+          },
+        };
+      });
+    },
+    []
+  );
 
   const openTaskDialog = useCallback((task: Task) => {
     setBoardState((prev) => ({
@@ -105,11 +158,15 @@ export default function TaskGrid({
   const selectedTask =
     data.find((task) => task.id === boardState.selectedTaskId) || null;
 
+  const completedTasksCount = data.filter((task) =>
+    isTaskCompleted(task)
+  ).length;
+
   return (
     <div>
       <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
         {data.map((task) => {
-          const isCompleted = boardState.completedTasks.has(task.id);
+          const isCompleted = isTaskCompleted(task);
 
           return (
             <Card
@@ -121,33 +178,18 @@ export default function TaskGrid({
               onClick={() => openTaskDialog(task)}
             >
               <CardHeader className="pb-3">
-                <div className="flex items-start justify-between gap-3">
-                  <div className="flex-1 min-w-0">
-                    <CardTitle
-                      className={cn(
-                        "text-lg leading-tight text-balance text-yellow-300",
-                        isCompleted && "line-through text-muted-foreground"
-                      )}
-                    >
-                      {task.title}
-                    </CardTitle>
-                    <CardDescription className="mt-1 text-sm text-white">
-                      {task.items}
-                    </CardDescription>
-                  </div>
-                  <div className="flex items-center gap-2 flex-shrink-0">
-                    <Checkbox
-                      checked={isCompleted}
-                      onCheckedChange={() => toggleTaskCompletion(task.id)}
-                      onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-                        e.stopPropagation()
-                      }
-                      className="data-[state=checked]:bg-primary data-[state=checked]:border-primary"
-                      aria-label={`Mark "${task.title}" as ${
-                        isCompleted ? "incomplete" : "complete"
-                      }`}
-                    />
-                  </div>
+                <div className="flex-1 min-w-0">
+                  <CardTitle
+                    className={cn(
+                      "text-lg leading-tight text-balance text-yellow-300",
+                      isCompleted && "line-through text-muted-foreground"
+                    )}
+                  >
+                    {task.title}
+                  </CardTitle>
+                  <CardDescription className="mt-1 text-sm text-white">
+                    {task.items.join(", ")}
+                  </CardDescription>
                 </div>
               </CardHeader>
             </Card>
@@ -157,7 +199,7 @@ export default function TaskGrid({
 
       <div className="mt-8 text-center">
         <p className="text-sm text-yellow-300">
-          {boardState.completedTasks.size} of {data.length} tiles completed
+          {completedTasksCount} of {data.length} tiles completed
         </p>
       </div>
 
@@ -174,7 +216,7 @@ export default function TaskGrid({
                     {selectedTask.title}
                   </DialogTitle>
                   <DialogDescription className="mt-2 text-white">
-                    {selectedTask.items}
+                    {selectedTask.items.join(", ")}
                   </DialogDescription>
                 </div>
               </DialogHeader>
@@ -185,6 +227,38 @@ export default function TaskGrid({
                   <p className="text-sm text-white text-pretty leading-relaxed">
                     {selectedTask.description}
                   </p>
+                </div>
+
+                <div>
+                  <h4 className="font-medium mb-3 text-yellow-300">Subtasks</h4>
+                  <div className="space-y-2">
+                    {getSubtasksWithState(selectedTask).map((subtask) => (
+                      <div
+                        key={subtask.id}
+                        className="flex items-center space-x-3 p-2 rounded-md bg-zinc-800/50"
+                      >
+                        <Checkbox
+                          checked={subtask.completed}
+                          onCheckedChange={() =>
+                            toggleSubtaskCompletion(selectedTask.id, subtask.id)
+                          }
+                          className="data-[state=checked]:bg-primary data-[state=checked]:border-primary"
+                        />
+                        <label
+                          className={cn(
+                            "text-sm text-white cursor-pointer flex-1",
+                            subtask.completed &&
+                              "line-through text-muted-foreground"
+                          )}
+                          onClick={() =>
+                            toggleSubtaskCompletion(selectedTask.id, subtask.id)
+                          }
+                        >
+                          {subtask.text}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </>
