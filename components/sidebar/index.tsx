@@ -119,7 +119,7 @@ export function AppSidebar() {
   }, []);
 
   return (
-    <Sidebar className="bg-black border-yellow-300 border-r-4 text-center text-yellow-300">
+    <Sidebar className="bg-black border-yellow-300 border-r-4 text-center text-yellow-300 sm:text-yellow-300">
       <SidebarHeader className="flex justify-center items-center bg-black">
         <Image
           src="/images/dyz.png"
@@ -176,6 +176,15 @@ export function AppSidebar() {
             Import Board State
           </Button>
         </div>
+        {/* <Link href="/settings">
+          <Button
+            variant="outline"
+            size="sm"
+            className="w-full bg-black border-yellow-300 text-yellow-300 hover:bg-yellow-300 hover:text-black"
+          >
+            Settings
+          </Button>
+        </Link> */}
       </SidebarFooter>
     </Sidebar>
   );
