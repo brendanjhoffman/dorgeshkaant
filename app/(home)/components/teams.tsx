@@ -1,7 +1,7 @@
 import Teams from "@/lib/teams.json";
 import Image from "next/image";
 
-export default function TeamsPage() {
+export default function TeamsComponent() {
   const womBaseUrl = "https://wiseoldman.net/players/";
   const getTeamStyle = (color: string) => {
     switch (color) {
@@ -15,6 +15,7 @@ export default function TeamsPage() {
         return "text-yellow-300";
     }
   };
+
   return (
     <div className="p-4">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

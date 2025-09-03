@@ -120,36 +120,28 @@ export function AppSidebar() {
 
   return (
     <Sidebar className="bg-black border-yellow-300 border-r-4 text-center text-yellow-300 sm:text-yellow-300">
-      <SidebarHeader className="flex justify-center items-center bg-black">
-        <Image
-          src="/images/dyz.png"
-          alt="Dorgeshkaant"
-          width={100}
-          height={100}
-        />
-        <h1 className="text-2xl font-bold">Dorgeshkaant</h1>
+      <SidebarHeader className=" bg-black">
+        <Link href="/" className="flex flex-col justify-center items-center">
+          <h1 className="text-xl font-bold">goblins of the mind altar</h1>
+          <Image
+            src="/images/dyzrune.png"
+            alt="Dorgeshkaant"
+            width={150}
+            height={150}
+          />
+        </Link>
       </SidebarHeader>
       <SidebarContent className="bg-black">
         <SidebarGroup className="bg-black">
-          <SidebarMenu>
+          <SidebarMenu className="border-yellow-300 border-b-2 border-t-2 mx-4 py-4 w-auto text-xl">
             <SidebarMenuItem>
-              <Link href="/">Main Board</Link>
+              <Link href="/main">Main Board</Link>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <Link href="/hard-board">Hard Board</Link>
+              <Link href="/weekly">Weekly Board</Link>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <Link href="/raid-board">Raid Board</Link>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <Link href="/weekly-board">Weekly Board</Link>
-            </SidebarMenuItem>
-          </SidebarMenu>
-        </SidebarGroup>
-        <SidebarGroup className="bg-black">
-          <SidebarMenu>
-            <SidebarMenuItem>
-              <Link href="/teams">Teams</Link>
+              <Link href="/misc">Misc Boards</Link>
             </SidebarMenuItem>
           </SidebarMenu>
         </SidebarGroup>
