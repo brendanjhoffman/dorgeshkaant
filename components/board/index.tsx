@@ -1,40 +1,9 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import { cn } from "@/lib/utils";
-
-interface Subtask {
-  id: string;
-  text: string;
-  completed: boolean;
-}
-
-interface Task {
-  id: number;
-  title: string;
-  items: string[];
-  description: string;
-  subtasks?: Subtask[];
-}
-
-interface BoardState {
-  selectedTaskId: number | null;
-  subtaskStates: Record<number, Record<string, boolean>>;
-}
+import { Task, Subtask, BoardState } from "./types";
+import Tile from "./tile";
+import TaskDialog from "./task-dialog";
 
 export default function TaskGrid({
   data,
@@ -51,22 +20,6 @@ export default function TaskGrid({
     selectedTaskId: parsedState.selectedTaskId || null,
     subtaskStates: parsedState.subtaskStates || {},
   });
-
-  // // Load state from localStorage on component mount
-  // useEffect(() => {
-  //   try {
-  //     const saved = localStorage.getItem(storageKey);
-  //     if (saved) {
-  //       const parsedState = JSON.parse(saved);
-  //       setBoardState({
-  //         selectedTaskId: parsedState.selectedTaskId || null,
-  //         subtaskStates: parsedState.subtaskStates || {},
-  //       });
-  //     }
-  //   } catch (error) {
-  //     console.error("Error loading board state from localStorage:", error);
-  //   }
-  // }, [storageKey]);
 
   // Save state to localStorage whenever it changes
   useEffect(() => {
@@ -164,46 +117,20 @@ export default function TaskGrid({
   ).length;
 
   return (
-    <div>
-      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 text-center">
+    <div className="">
+      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 text-center justify-items-center">
         {data.map((task) => {
           const isCompleted = isTaskCompleted(task);
+          const subtasksWithState = getSubtasksWithState(task);
 
           return (
-            <Card
+            <Tile
               key={task.id}
-              className={cn(
-                "bg-black transition-all duration-200 hover:shadow-lg cursor-pointer border-yellow-300",
-                isCompleted && "opacity-75 bg-zinc-600/50"
-              )}
-              onClick={() => openTaskDialog(task)}
-            >
-              <CardHeader className="pb-3">
-                <div className="flex-1 min-w-0">
-                  <CardTitle
-                    className={cn(
-                      "text-lg leading-tight text-balance text-yellow-300",
-                      isCompleted && "line-through text-muted-foreground"
-                    )}
-                  >
-                    {task.title}
-                  </CardTitle>
-                  <CardDescription className="mt-1 text-sm text-white">
-                    {task.items.join(", ")}
-                  </CardDescription>
-                  {getSubtasksWithState(task).length > 1 && (
-                    <div className="mt-2 text-xs text-yellow-300/70">
-                      {
-                        getSubtasksWithState(task).filter(
-                          (subtask) => subtask.completed
-                        ).length
-                      }
-                      /{getSubtasksWithState(task).length}
-                    </div>
-                  )}
-                </div>
-              </CardHeader>
-            </Card>
+              task={task}
+              isCompleted={isCompleted}
+              subtasksWithState={subtasksWithState}
+              onTaskClick={openTaskDialog}
+            />
           );
         })}
       </div>
@@ -214,68 +141,13 @@ export default function TaskGrid({
         </p>
       </div>
 
-      <Dialog
-        open={!!selectedTask}
-        onOpenChange={(open: boolean) => !open && closeTaskDialog()}
-      >
-        <DialogContent className="max-w-2xl bg-zinc-900 border-yellow-300 border-2">
-          {selectedTask && (
-            <>
-              <DialogHeader>
-                <div className="flex-1">
-                  <DialogTitle className="text-xl text-balance pr-4 text-yellow-300">
-                    {selectedTask.title}
-                  </DialogTitle>
-                  <DialogDescription className="mt-2 text-white">
-                    {selectedTask.items.join(", ")}
-                  </DialogDescription>
-                </div>
-              </DialogHeader>
-
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-medium mb-2 text-yellow-300">Details</h4>
-                  <p className="text-sm text-white text-pretty leading-relaxed">
-                    {selectedTask.description}
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="font-medium mb-3 text-yellow-300">Subtasks</h4>
-                  <div className="space-y-2">
-                    {getSubtasksWithState(selectedTask).map((subtask) => (
-                      <div
-                        key={subtask.id}
-                        className="flex items-center space-x-3 p-2 rounded-md bg-zinc-800/50"
-                      >
-                        <Checkbox
-                          checked={subtask.completed}
-                          onCheckedChange={() =>
-                            toggleSubtaskCompletion(selectedTask.id, subtask.id)
-                          }
-                          className="data-[state=checked]:bg-primary data-[state=checked]:border-primary"
-                        />
-                        <label
-                          className={cn(
-                            "text-sm text-white cursor-pointer flex-1",
-                            subtask.completed &&
-                              "line-through text-muted-foreground"
-                          )}
-                          onClick={() =>
-                            toggleSubtaskCompletion(selectedTask.id, subtask.id)
-                          }
-                        >
-                          {subtask.text}
-                        </label>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </>
-          )}
-        </DialogContent>
-      </Dialog>
+      <TaskDialog
+        selectedTask={selectedTask}
+        isOpen={!!selectedTask}
+        onClose={closeTaskDialog}
+        getSubtasksWithState={getSubtasksWithState}
+        toggleSubtaskCompletion={toggleSubtaskCompletion}
+      />
     </div>
   );
 }
