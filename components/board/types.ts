@@ -9,7 +9,7 @@ export interface Task {
   title: string;
   items: string[];
   description: string;
-  image_name: string;
+  image_name?: string;
   subtasks?: Subtask[];
 }
 
