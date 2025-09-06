@@ -4,19 +4,22 @@
       "id": 1,
       "title": "DRAW DYZ",
       "items": ["Dyz"],
-      "description": "Have a member of your team draw Dyz (our mascot) to the best of their ability!"
+      "description": "Have a member of your team draw Dyz (our mascot) to the best of their ability!",
+      "image_name": "Weekly_1-1_DrawDyz.png"
     },
     {
       "id": 2,
       "title": "PK A MEMBER OF DORG",
       "items": ["PK"],
-      "description": "Have a member of your team PK another member of the clan (must not be on your bingo team; players guesting on other bingo teams DO count)!"
+      "description": "Have a member of your team PK another member of the clan (must not be on your bingo team; players guesting on other bingo teams DO count)!",
+      "image_name": "Weekly_1-2_PK.png"
     },
     {
       "id": 3,
       "title": "YES CHEF",
       "items": ["Golden Chefs Hat"],
-      "description": "Have a member of your team acquire a Golden Chefs Hat from an easy clue!"
+      "description": "Have a member of your team acquire a Golden Chefs Hat from an easy clue!",
+      "image_name": "Weekly_1-3_GoldenChefsHat.png"
     }
   ],
   [
@@ -24,19 +27,22 @@
       "id": 4,
       "title": "COOL ANIMAL!",
       "items": ["Cool Animal"],
-      "description": "Take a pic of the coolest animal you see and draw a classic OSRS hat on it!"
+      "description": "Take a pic of the coolest animal you see and draw a classic OSRS hat on it!",
+      "image_name": "Weekly_2-1PetHat.png"
     },
     {
       "id": 5,
       "title": "MINE 10K OF SOMETHING",
       "items": ["10k of something"],
-      "description": "Mine 10k of whatever (and potentially crash the GE with it)"
+      "description": "Mine 10k of whatever (and potentially crash the GE with it)",
+      "image_name": "Weekly_2-2_Mine10k.png"
     },
     {
       "id": 6,
       "title": "PRESENT US WITH THE CRYSTAL GRAIL",
       "items": ["Crystal Grail"],
-      "description": "Slay the beast and present us with the Crystal Grail!"
+      "description": "Slay the beast and present us with the Crystal Grail!",
+      "image_name": "Weekly_2-3_CrystalGrail.png"
     }
   ],
   [
@@ -44,19 +50,22 @@
       "id": 7,
       "title": "HEAD OF LETTUCE PB (100% Completion)",
       "items": ["LETTUCE"],
-      "description": "Speedrun eat an entire head of lettuce! Gobble up, gobbos!"
+      "description": "Speedrun eat an entire head of lettuce! Gobble up, gobbos!",
+      "image_name": "Weekly_3-1_HeadofLettucePB.png"
     },
     {
       "id": 8,
       "title": "MELEE JAD KILL",
       "items": ["Melee Jad Kill"],
-      "description": "Defeat Jad with your bare hands—oh, wait, that's not the challenge? Just with a melee weapon is fine?"
+      "description": "Defeat Jad with your bare hands—oh, wait, that's not the challenge? Just with a melee weapon is fine?",
+      "image_name": "Weekly_3-2_MeleeJad.png"
     },
     {
       "id": 9,
       "title": "GOUT TUBER",
       "items": ["Gout Tuber"],
-      "description": "Brave the Tai Bwo Wannai Cleanup minigame (potentially) for a medium diary task you haven't completed!"
+      "description": "Brave the Tai Bwo Wannai Cleanup minigame (potentially) for a medium diary task you haven't completed!",
+      "image_name": "Weekly_3-3_GoutTuber.png"
     }
   ],
   [

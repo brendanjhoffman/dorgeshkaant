@@ -3,18 +3,21 @@
     "id": 1,
     "title": "IT BURNS LIKE A",
     "items": ["Infernal Cape"],
-    "description": "Have a member of your team acquire their Infernal Cape for the first time. Anybody who has killed Zuk before on ANY account is ineligible."
+    "description": "Have a member of your team acquire their Infernal Cape for the first time. Anybody who has killed Zuk before on ANY account is ineligible.",
+    "image_name": "Hard_FirstInferno.png"
   },
   {
     "id": 2,
     "title": "THE SPIDER'S DEN",
     "items": ["Normal Mode ToB"],
-    "description": "With only members from your bingo team, complete a Normal Mode ToB without having a single member die."
+    "description": "With only members from your bingo team, complete a Normal Mode ToB without having a single member die.",
+    "image_name": "Hard_NoDeaths.png"
   },
   {
     "id": 3,
     "title": "...OR GIVE ME DEATH",
     "items": ["Dizana's Quiver"],
-    "description": "Have a member of your team acquire their Dizana's Quiver for the first time. Anybody who was killed Sol before on ANY account is ineligible."
+    "description": "Have a member of your team acquire their Dizana's Quiver for the first time. Anybody who was killed Sol before on ANY account is ineligible.",
+    "image_name": "Hard_FirstQuiver.png"
   }
 ]
